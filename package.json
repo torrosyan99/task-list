@@ -1,0 +1,23 @@
+{
+  "name": "task-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix frontend && npm install --prefix backend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torosyan99/task-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torosyan99/task-list/issues"
+  },
+  "homepage": "https://github.com/torosyan99/task-list#readme",
+  "dependencies": {
+    "mongoose": "^9.0.2"
+  }
+}
