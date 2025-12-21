@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+    /* Цвета: переменные должны начинаться с --color- */
+    --color-primary: #E0E0E0;
+    --color-dark: #1E1E2F;
+    --color-border: #3A3A4E;
+
+    /* Шрифты: можно объявить через fontFamily в теме */
+    --font-montserrat: Montserrat, sans-serif;
+
+}
+/*subtext: "#A0A0B0",*/
+/*primary: "#4F91FF",*/
+/*success: "#10B981",*/
+/*warning: "#F59E0B",*/
+/*card: "#2A2A3C",*/
+/*border: "#3A3A4E",*/
+
+body {
+    /* Используем утилиты, которые Tailwind генерирует: bg-primary и text-primary */
+    @apply bg-dark text-primary font-montserrat;
+}
