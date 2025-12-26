@@ -3,6 +3,7 @@ import { RoutePaths } from '@/shared/config/routePaths/routePaths.tsx';
 import { createBrowserRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../ui/ProtectedRoute.tsx';
 import { LoginPage } from '@/pages/LogiPage';
+import { RegisterPage } from '@/pages/RegisterPage';
 
 const privateRoutes: AppRoute[] = [
   {
@@ -15,6 +16,10 @@ export const publicRoutes: AppRoute[] = [
   {
     path: RoutePaths.LOGIN,
     element: <LoginPage />,
+  },
+  {
+    path: RoutePaths.REGISTER,
+    element: <RegisterPage />,
   },
 ];
 

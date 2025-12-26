@@ -12,7 +12,8 @@ server.use(express.json());
 
 const __dirname = path.resolve();
 
-server.post('/api/create_user', async (req, res) => {
+server.post('/api/register', async (req, res) => {
+  console.log(req.body)
   const user = await User.create(req.body);
   res.send(user);
 });

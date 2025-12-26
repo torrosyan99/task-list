@@ -3,8 +3,14 @@
 @theme {
     /* Цвета: переменные должны начинаться с --color- */
     --color-primary: #E0E0E0;
+    --color-primary-hover: #ffffff;
+
     --color-dark: #1E1E2F;
-    --color-border: #3A3A4E;
+    --color-dark-hover: #2d2d2d;
+    --color-error: #FF0000;
+    --color-success: #00FF00;
+
+    --color-border: #3F3F46;
 
     /* Шрифты: можно объявить через fontFamily в теме */
     --font-montserrat: Montserrat, sans-serif;
@@ -19,5 +25,24 @@
 
 body {
     /* Используем утилиты, которые Tailwind генерирует: bg-primary и text-primary */
-    @apply bg-dark text-primary font-montserrat;
+    @apply bg-dark text-primary font-montserrat text-[16px];
+}
+
+h2 {
+    font-size: 26px;
+}
+
+.sm-text {
+    @apply text-[12px] md:text-[14px];
+}
+
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    body {
+        @apply  text-[14px];
+    }
 }
