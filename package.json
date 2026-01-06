@@ -1,0 +1,12 @@
+{
+  "name": "task-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm i --prefix frontend && npm i --prefix backend && npm build --prefix frontend",
+    "start": "npm start --prefix backend"
+  },
+  "author": "",
+  "license": "ISC"
+}
