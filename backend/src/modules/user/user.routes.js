@@ -12,6 +12,6 @@ router.get("/logout", userController.logout);
 router.get("/me", authMiddleware, userController.me);
 
 export const userRoutes = {
-  prefix: "/api/users",
+  prefix: "/api/auth",
   router,
 };

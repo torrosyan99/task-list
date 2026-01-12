@@ -31,6 +31,6 @@ export const cookie = (res, token) => {
     httpOnly: true,
     secure: ENV.MODE === 'production',
     sameSite: "strict",
-    maxAge: 1000 * 60 * 60,
+    maxAge: 1000 * 60 * 60 * 24 * 10,
   });
 }

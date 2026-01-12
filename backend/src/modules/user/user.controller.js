@@ -29,7 +29,7 @@ export const me = catchAsync(async (req, res) => {
 });
 
 export const logout = catchAsync(async (req, res) => {
-  res.clearCookie("access_token");
+  res.clearCookie("list_token");
   res.send({
     success: true,
   })

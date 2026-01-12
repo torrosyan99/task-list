@@ -3,4 +3,12 @@
 @theme {
 
     --color-bg: #111f28;
+    --color-primary:#fff;
+
+    --font-arimo: "Arimo", sans-serif;
+}
+
+
+body {
+    @apply font-arimo;
 }

@@ -16,7 +16,7 @@ export const login = async ({ username, password }) => {
   validateUsernamePassword(username, password);
   const user = await findByUsername(username);
   if (!user) throw new ApiError(404, "Неправельные данные");
-  const checkPassword = bcrypt.compare(password, user.password);
+  const checkPassword = await bcrypt.compare(password, user.password);
   if (!checkPassword) throw new ApiError(404, "Неправельные данные");
   return user
 };
