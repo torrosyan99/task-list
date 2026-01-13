@@ -4,11 +4,17 @@
 
     --color-bg: #111f28;
     --color-primary:#fff;
+    --color-black-o: rgba(0, 0, 0, 0.44);
 
     --font-arimo: "Arimo", sans-serif;
 }
 
 
 body {
-    @apply font-arimo;
+    @apply font-arimo bg-bg text-[14px]  md:text-[16px];
+}
+
+
+h3 {
+    @apply text-[24px] md:text-[36px] font-bold;
 }

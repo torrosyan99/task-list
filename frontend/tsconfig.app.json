@@ -26,7 +26,8 @@
     // My options
 
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@icons/*": ["./src/shared/assets/icons/*"]
     }
   },
   "include": ["src"]

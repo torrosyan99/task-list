@@ -21,7 +21,7 @@ export function App() {
     };
     checkAuth();
   }, []);
-  return <div className="bg-bg text-primary flex flex-col min-h-screen">
+  return <div className="text-primary flex flex-col min-h-screen">
     <Header />
     {checkUser && <AppRouter />}
   </div>;

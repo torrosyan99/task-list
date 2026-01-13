@@ -1,32 +1,14 @@
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-
-
 import { fetchMe } from "@/entities/user";
-
-
 
 import { API_ENDPOINTS } from "@/shared/api/endpoints.ts";
 import { PagePaths } from "@/shared/config/routerConfig.tsx";
 import { useAppDispatch } from "@/shared/hooks/useAppDispatch.ts";
 import { Box } from "@/shared/ui/Box/Box.tsx";
+import { Button } from "@/shared/ui/Button/Button.tsx";
 import { Input } from "@/shared/ui/Input/Input.tsx";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 interface FormValues {
   username: string;
@@ -38,12 +20,7 @@ export const Login = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<FormValues>({
-    defaultValues: {
-      username: "torosyan99",
-      password: "123456",
-    },
-  });
+  } = useForm<FormValues>();
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -56,12 +33,8 @@ export const Login = () => {
       },
       body: JSON.stringify(data),
     })
-      .then((res) => {
-        console.log(res, 'res');
-       return  res.json();
-      })
+      .then((res) => res.json())
       .then(async (data) => {
-        console.log(data, 'data');
         if (data.success) {
           const resultAction = await dispatch(fetchMe());
           if (fetchMe.fulfilled.match(resultAction)) {
@@ -70,21 +43,29 @@ export const Login = () => {
         }
       });
   };
-  return (
 
+  return (
     <Box className={"max-w-[500px]"}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className={"flex flex-col gap-4"} onSubmit={handleSubmit(onSubmit)}>
+        <h3> Вход</h3>
         <Input
-          {...register("username", { required: "Require" })}
+          {...register("username", {
+            required: "Require",
+            minLength: { value: 6, message: "Error" },
+          })}
           error={errors.username?.message}
-          placeholder="Username"
+          placeholder="Имя пользователя"
         />
         <Input
-          {...register("password", { required: "Require" })}
-          placeholder="Password"
+          type={"password"}
+          {...register("password", {
+            required: "Require",
+            minLength: { value: 6, message: "Error" },
+          })}
+          placeholder="Пароль"
           error={errors.password?.message}
         />
-        <button className={'cursor-pointer'}>Submit</button>
+        <Button>Отправить</Button>
       </form>
     </Box>
   );
