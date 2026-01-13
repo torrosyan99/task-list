@@ -71,6 +71,7 @@ export const Login = () => {
       });
   };
   return (
+
     <Box className={"max-w-[500px]"}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input

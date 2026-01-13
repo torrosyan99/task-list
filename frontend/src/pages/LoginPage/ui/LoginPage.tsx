@@ -3,6 +3,7 @@ import {useAppSelector} from "@/shared/hooks/useAppSelector.ts";
 import {selectIsAuth} from "@/entities/user";
 import {Navigate} from "react-router-dom";
 import {PagePaths} from "@/shared/config/routerConfig.tsx";
+import {Container} from "@/shared/ui/Container/Container.tsx";
 
 export const LoginPage = () => {
 
@@ -11,8 +12,8 @@ export const LoginPage = () => {
     return <Navigate to={PagePaths.HOMEPAGE} replace />;
   }
   return (
-    <div className={'grow-1 flex items-center justify-center'}>
+    <Container className={'grow-1 flex items-center justify-center'}>
       <Login />
-    </div>
+    </Container>
   );
 };
