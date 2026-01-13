@@ -34,6 +34,7 @@ export const Login = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        credentials: "same-origin"
       },
       body: JSON.stringify(data),
     })

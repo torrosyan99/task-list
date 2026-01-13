@@ -29,7 +29,7 @@ export const createToken = (user) => {
 export const cookie = (res, token) => {
   res.cookie("list_token", token, {
     httpOnly: true,
-    secure: ENV.MODE === 'production',
+    secure: false,
     sameSite: "strict",
     maxAge: 1000 * 60 * 60 * 24 * 10,
   });

@@ -15,6 +15,7 @@ export const register = catchAsync(async (req, res) => {
 export const login = catchAsync(async (req, res) => {
   const user = await userService.login(req.body);
   const token = createToken(user);
+  console.log(token)
   cookie(res, token);
   res.send({
     success: true,
