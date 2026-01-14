@@ -22,16 +22,10 @@ export const fetchMe = createAsyncThunk<User, void, { rejectValue: string }>(
   },
 );
 
-
-export const logout = createAsyncThunk<{success:boolean}>(
- "USER/LOGOUT",
-  async (_, { rejectWithValue }) => {
-    try {
-      const resp = await fetch(API_ENDPOINTS.auth.logout);
-      return await resp.json();
-    }
-    catch (error) {
-      return rejectError(error, rejectWithValue);
-    }
-  }
-)
+export const logout = createAsyncThunk<{ success: boolean }>(
+  "USER/LOGOUT",
+  async () => {
+    const resp = await fetch(API_ENDPOINTS.auth.logout);
+    return await resp.json();
+  },
+);

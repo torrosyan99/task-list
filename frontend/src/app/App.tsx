@@ -13,7 +13,6 @@ import {Header} from "@/widgets/Header";
 export function App() {
   const [checkUser, setCheckUser] = useState(false);
   const dispatch = useAppDispatch();
-  console.log('ap')
   useEffect(() => {
     const checkAuth = async () => {
       await dispatch(fetchMe());

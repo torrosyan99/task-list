@@ -9,7 +9,7 @@ interface BoxProps {
 export const Box = ({ children, className }: PropsWithChildren<BoxProps>) => {
   return (
     <div
-      className={classNames("w-full border border-primary p-5 rounded-lg", [
+      className={classNames("w-full border border-primary p-3 rounded-lg md:py-5", [
         className,
       ])}
     >

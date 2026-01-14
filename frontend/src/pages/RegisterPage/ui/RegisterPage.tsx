@@ -1,11 +1,12 @@
-import { Login } from "@/features/Login";
+
+import { Register } from "@/features/Register";
 
 import { Container } from "@/shared/ui/Container/Container.tsx";
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
   return (
     <Container className={"grow-1 flex items-center justify-center"}>
-      <Login />
+      <Register />
     </Container>
   );
 };
