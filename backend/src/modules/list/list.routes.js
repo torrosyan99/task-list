@@ -8,9 +8,10 @@ const router = new Router();
 
 router.get("/",authMiddleware, listController.getAllPosts);
 router.post("/create",authMiddleware, listController.create);
+router.patch("/update",authMiddleware, listController.update);
 
 
 export const listRoutes = {
-  prefix: "/api/posts",
+  prefix: "/api/lists",
   router,
 };
