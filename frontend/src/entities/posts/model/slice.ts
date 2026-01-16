@@ -14,6 +14,11 @@ const postSlice = createSlice({
   reducers: {
     addPost: (state, action) => {
       state.data.unshift(action.payload);
+    },
+    deletePosts: (state) => {
+      state.data = [];
+      state.hasPosts = false
+      state.error = ''
     }
   },
   extraReducers: builder => {

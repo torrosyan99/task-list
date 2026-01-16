@@ -1,13 +1,33 @@
-import {useAppDispatch} from "@/shared/hooks/useAppDispatch.ts";
-import {logout} from "@/entities/user";
-import {Modal} from "@/shared/ui/Modal/Modal.tsx";
-import {useState} from "react";
-import {Button} from "@/shared/ui/Button/Button.tsx";
+import { useState } from "react";
+
+
+
+import { logout } from "@/entities/user";
+
+
+
+import { useAppDispatch } from "@/shared/hooks/useAppDispatch.ts";
+import { Button } from "@/shared/ui/Button/Button.tsx";
+import { Modal } from "@/shared/ui/Modal/Modal.tsx";
+import {postActions} from "@/entities/posts";
+
+
+
+
+
+
+
+
+
+
 
 export const Logout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
-  const logoutFn = () => dispatch(logout());
+  const logoutFn = () => {
+    dispatch(postActions.deletePosts())
+    dispatch(logout());
+  };
   const onClose = () => setIsOpen(false);
   const onClick = () => setIsOpen(true);
   return (<>
