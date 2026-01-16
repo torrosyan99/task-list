@@ -7,15 +7,19 @@ import { useAppSelector } from "@/shared/hooks/useAppSelector.ts";
 import { Container } from "@/shared/ui/Container/Container.tsx";
 
 import { Logout } from "./Logout.tsx";
+import { Menu } from "./Menu.tsx";
 
 export const Header = () => {
   const isAuth = useAppSelector(selectIsAuth);
 
   return (
     <header className={"py-6"}>
-      <Container className="flex items-center">
+      <Container className="flex items-center gap-3">
         {isAuth ? (
-          <Logout />
+          <>
+            <Menu />
+            <Logout />
+          </>
         ) : (
           <Link className={"ml-auto"} to={PagePaths.LOGIN}>
             Войти

@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 
 import { AppRouter } from "@/app/routes";
 
+import { Header } from "@/widgets/Header";
+
 import { fetchMe } from "@/entities/user";
 
 import { useAppDispatch } from "@/shared/hooks/useAppDispatch.ts";
 
 import "./styles/fonts.css";
 import "./styles/main.css";
-import {Header} from "@/widgets/Header";
 
 export function App() {
   const [checkUser, setCheckUser] = useState(false);
@@ -20,8 +21,14 @@ export function App() {
     };
     checkAuth();
   }, []);
-  return <div className="text-primary flex flex-col min-h-[100dvh]">
-    <Header />
-    {checkUser && <AppRouter />}
-  </div>;
+  return (
+    <div className="text-primary flex flex-col min-h-[100dvh]">
+      {checkUser && (
+        <>
+          <Header />
+          <AppRouter />
+        </>
+      )}
+    </div>
+  );
 }

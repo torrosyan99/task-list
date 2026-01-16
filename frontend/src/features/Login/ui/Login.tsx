@@ -39,7 +39,7 @@ export const Login = () => {
   };
 
   return (
-    <Box className={"max-w-[500px]"}>
+    <Box className={"max-w-[500px] text-"}>
       <form className={"flex flex-col gap-3"} onSubmit={handleSubmit(onSubmit)}>
         <h3>Вход</h3>
         <Input

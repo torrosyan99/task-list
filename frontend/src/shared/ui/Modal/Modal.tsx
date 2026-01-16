@@ -1,6 +1,7 @@
 import {type MouseEvent, type PropsWithChildren, useEffect, useState} from "react";
 import CloseSvg from '@icons/close.svg?react'
 import { classNames } from "@/shared/lib/classNames.ts";
+import {createPortal} from "react-dom";
 
 interface ModalProps {
   isOpen: boolean;
@@ -31,8 +32,8 @@ export const Modal = ({ isOpen, onClose, children }: PropsWithChildren<ModalProp
 
   const contentClick = (e: MouseEvent<HTMLDivElement>) => e.stopPropagation();
 
-  return (
-    <div className={"absolute top-0 left-0  right-0"}>
+  return createPortal(
+    <div className={"absolute top-0 left-0 right-0 z-50"}>
       <div
         className={
           "w-full h-screen flex justify-center items-center px-5 bg-black-o"
@@ -56,5 +57,5 @@ export const Modal = ({ isOpen, onClose, children }: PropsWithChildren<ModalProp
         </div>
       </div>
     </div>
-  );
+  , document.body);
 };

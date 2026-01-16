@@ -4,15 +4,17 @@
 
     --color-bg: #111f28;
     --color-primary:#fff;
+    --color-secondary:#111f28;
     --color-black-o: rgba(0, 0, 0, 0.44);
     --color-error: #ee0101;
+    --color-success: #0fce0f;
 
     --font-arimo: "Arimo", sans-serif;
 }
 
 
 body {
-    @apply font-arimo bg-bg text-[14px]  md:text-[16px];
+    @apply font-arimo bg-bg text-primary text-[14px]  md:text-[16px];
 }
 
 

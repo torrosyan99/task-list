@@ -4,12 +4,11 @@ import ClosedEye from '@icons/eye-closed.svg?react'
 import { classNames } from "@/shared/lib/classNames.ts";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
   error?: string;
   ref?: Ref<HTMLInputElement>;
 }
 
-export const Input = ({ label, error, ref, type, ...others }: InputProps) => {
+export const Input = ({  error, ref, type, ...others }: InputProps) => {
   const [inputType, setInputType] = useState(type);
   const changeType = () => setInputType(t => t === 'password' ? 'text' : 'password');
   return (
@@ -17,10 +16,11 @@ export const Input = ({ label, error, ref, type, ...others }: InputProps) => {
       <input
         type={inputType}
         className={classNames(
-          "w-full p-2  rounded-xl border border-primary focus:outline-none",
+          "w-full p-2 text-[16px] rounded-xl border focus:outline-none",
           [],
           {
-            "border-red-700": Boolean(error),
+            "border-primary":!Boolean(error),
+            "border-error": Boolean(error),
             'pr-8': type === 'password',
           },
         )}

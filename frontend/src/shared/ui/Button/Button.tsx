@@ -18,7 +18,7 @@ export function Button<T extends ElementType>({
     <Component
       className={classNames(
         `inline-flex items-center justify-center bg-primary text-black
-        rounded-md px-4 py-2 text-sm font-medium transition`,
+        rounded-xl px-4 py-2  font-medium transition`,
         [className]
       )}
       {...props}

@@ -5,6 +5,11 @@ export const API_ENDPOINTS = {
     logout: 'api/auth/logout',
     register: 'api/auth/register',
   },
+  lists: {
+    create: 'api/lists/create',
+    get: 'api/lists',
+    update: 'api/lists/update',
+  }
 
 } as const;
 
